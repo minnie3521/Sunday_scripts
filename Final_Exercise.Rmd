@@ -54,3 +54,12 @@ plot(x=data.out.China$year,y=data.out.China$gdpPercap,
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r, echo=FALSE}
+gap.in %>%
+  select(continent, lifeExp) %>%
+  group_by(continent) %>%
+  summarize(min = min(lifeExp), mean = mean(lifeExp), max = max(lifeExp)) -> data.out.lifeExp
+```
+The mean life expectancy in Africa, Americas, Asia, Europe, and Oceania is `r 2 + 2`.
+
